@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Home</title>
+</head>
+<style>
+    body{
+        background-image: url(/assets/backgroun1.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(207, 2, 2);
+        text-shadow: 0 0 10px 2px red;
+    }
+    audio{
+        display: none;
+    }
+
+</style>
+<body>
+    <p>Tap Anywhere On Screen</p>
+    <div class="audio">
+        <audio id="backgroundAudio" src="audio.mp3" volume="1.0"></audio>
+    </div>
+
+    <script>
+        const audio = document.getElementById('backgroundAudio'); 
+        function playAudio() {
+            if (audio.paused) {
+                audio.play();
+            }
+        }
+        document.body.addEventListener('click', playAudio);
+    </script>
+</body>
+</html>
